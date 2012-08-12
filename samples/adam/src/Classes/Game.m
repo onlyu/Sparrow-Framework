@@ -97,18 +97,31 @@
     // play a sound when the egg is touched
     [umbrella addEventListener:@selector(onEggTouched:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
         
+    SPImage *player_leg = [[SPImage alloc] initWithContentsOfFile:@"player_leg1.png"];
+    player_leg.x = 100 + 21;
+    player_leg.y = 200 - 23;
+    player_leg.pivotX = 16;
+    player_leg.pivotY = 0;
+    [self addChild:player_leg];
+    [player_leg release];
+    
+    SPImage *player_umbrella = [[SPImage alloc] initWithContentsOfFile:@"player_umbrella1.png"];
+    player_umbrella.x = 100 - 10;
+    player_umbrella.y = 200 - 36;
+    player_umbrella.pivotX = 33;
+    player_umbrella.pivotY = 56;
+    [self addChild:player_umbrella];
+    [player_umbrella release];
     
     SPImage *body = [[SPImage alloc] initWithContentsOfFile:@"player_body.png"];
     body.x = 100;
-    body.y = 100;
+    body.y = 200;
+    body.pivotX = 28;
+    body.pivotY = 66;
     [self addChild:body];
     [body release];
     
-    SPImage *player_umbrella = [[SPImage alloc] initWithContentsOfFile:@"player_umbrella1.png"];
-    player_umbrella.x = 100;
-    player_umbrella.y = 100;
-    [self addChild:player_umbrella];
-    [player_umbrella release];
+    
     // Create a text field
     
     NSString *text = @"To find out how to create your own game out of this scaffold, " \
