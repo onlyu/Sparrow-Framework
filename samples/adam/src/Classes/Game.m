@@ -74,6 +74,7 @@
     background.scaleX = 1;
     background.scaleY = mGameWidth/background.height;
     [self addChild:background];
+    //[background release];
     
     Umbrella *umbrella = [[Umbrella alloc] initWithType:@"blue"];
     umbrella.x = mGameHeight / 2 - 20;
@@ -95,16 +96,19 @@
     
     // play a sound when the egg is touched
     [umbrella addEventListener:@selector(onEggTouched:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
-    
-    /*
-    // and animate it a little
-    SPTween *tween = [SPTween tweenWithTarget:egg time:5.0 transition:SP_TRANSITION_EASE_IN_OUT];
-    [tween animateProperty:@"rotation" targetValue:SP_D2R(360)];
-    tween.loop = SPLoopTypeRepeat;
-    [[SPStage mainStage].juggler addObject:tween];
-     */
         
     
+    SPImage *body = [[SPImage alloc] initWithContentsOfFile:@"player_body.png"];
+    body.x = 100;
+    body.y = 100;
+    [self addChild:body];
+    [body release];
+    
+    SPImage *player_umbrella = [[SPImage alloc] initWithContentsOfFile:@"player_umbrella1.png"];
+    player_umbrella.x = 100;
+    player_umbrella.y = 100;
+    [self addChild:player_umbrella];
+    [player_umbrella release];
     // Create a text field
     
     NSString *text = @"To find out how to create your own game out of this scaffold, " \
