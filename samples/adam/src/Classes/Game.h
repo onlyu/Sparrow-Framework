@@ -5,12 +5,15 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIDevice.h>
+#import "Umbrella.h"
+#import "Hero.h"
 
 @interface Game : SPSprite
 {
   @private 
     float mGameWidth;
     float mGameHeight;
+    Hero *hero;
 }
 
 - (id)initWithWidth:(float)width height:(float)height;

@@ -5,7 +5,7 @@
 
 #import "Game.h" 
 #import "Umbrella.h"
-
+#import "Hero.h"
 // --- private interface ---------------------------------------------------------------------------
 
 @interface Game ()
@@ -42,6 +42,7 @@
     
     [Media releaseAtlas];
     [Media releaseSound];
+    [hero release];
     
     [super dealloc];
 }
@@ -96,31 +97,11 @@
     
     // play a sound when the egg is touched
     [umbrella addEventListener:@selector(onEggTouched:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
-        
-    SPImage *player_leg = [[SPImage alloc] initWithContentsOfFile:@"player_leg1.png"];
-    player_leg.x = 100 + 21;
-    player_leg.y = 200 - 23;
-    player_leg.pivotX = 16;
-    player_leg.pivotY = 0;
-    [self addChild:player_leg];
-    [player_leg release];
     
-    SPImage *player_umbrella = [[SPImage alloc] initWithContentsOfFile:@"player_umbrella1.png"];
-    player_umbrella.x = 100 - 10;
-    player_umbrella.y = 200 - 36;
-    player_umbrella.pivotX = 33;
-    player_umbrella.pivotY = 56;
-    [self addChild:player_umbrella];
-    [player_umbrella release];
-    
-    SPImage *body = [[SPImage alloc] initWithContentsOfFile:@"player_body.png"];
-    body.x = 100;
-    body.y = 200;
-    body.pivotX = 28;
-    body.pivotY = 66;
-    [self addChild:body];
-    [body release];
-    
+    hero = [Hero hero];
+    hero.x = 200;
+    hero.y = 200;
+    [self addChild:hero];
     
     // Create a text field
     
@@ -170,10 +151,18 @@
 
 - (void)onEggTouched:(SPTouchEvent *)event
 {
+    static int count = 0;
     NSSet *touches = [event touchesWithTarget:self andPhase:SPTouchPhaseEnded];
-    if ([touches anyObject])
-    {
+    if ([touches anyObject]) {
         [Media playSound:@"sound.caf"];
+        
+        count ++;
+        NSLog(@"count = %d", count);
+        if (count % 2 == 0) {
+            [hero up];
+        } else {
+            [hero down];
+        }
     }
 }
 
