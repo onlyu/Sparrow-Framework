@@ -109,4 +109,6 @@
 /// The bounds of the textfield on the button. Allows moving the text to a custom position.
 @property (nonatomic, copy)   SPRectangle *textBounds;
 
+@property (nonatomic, assign) BOOL isDown;
+
 @end

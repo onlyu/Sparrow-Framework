@@ -7,8 +7,11 @@
 //
 
 #import "Hero.h"
+#import "UmbrellaManager.h"
 
 @implementation Hero
+
+@synthesize speedX = mSpeedX;
 
 - (id)init
 {
@@ -53,7 +56,8 @@
         
         [[SPStage mainStage].juggler addObject:self];
         
-        mSpeed = 0;
+        mSpeedY = 0;
+        mSpeedX = 0;
         mAccelerate = 0.5;
         [self down];
     }
@@ -97,15 +101,18 @@
 
 - (void)advanceTime:(double)seconds
 {
-    mSpeed += mAccelerate;
-    if (self.y > 180) {
-        mSpeed = -10;
+    UmbrellaManager *mgr = [UmbrellaManager instance];
+    mSpeedY += mAccelerate;
+    if ([mgr hitTestPoint:[SPPoint pointWithX:self.x y:self.y] forTouch:NO]) {
+    //if (self.y > 180) {
+        mSpeedY = -10;
         [self up];
     }
-    if (mSpeed >= 0) {
+    if (mSpeedY >= 0) {
         [self down];
     }
-    self.y += mSpeed;
+    self.y += mSpeedY;
+    self.x += mSpeedX;
 }
 
 - (BOOL)isComplete

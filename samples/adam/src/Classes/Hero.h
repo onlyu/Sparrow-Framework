@@ -17,10 +17,14 @@
     SPImage *mLeg;
     SPImage *mLeg1;
     float mAccelerate;
-    float mSpeed;
+    float mSpeedY;
+    float mSpeedX;
 }
 
 + (Hero *)hero; 
 - (void)up;
 - (void)down;
+
+@property (nonatomic,assign) float speedX;
+
 @end

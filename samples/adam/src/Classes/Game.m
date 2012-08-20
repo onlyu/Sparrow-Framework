@@ -4,8 +4,7 @@
 //
 
 #import "Game.h" 
-#import "Umbrella.h"
-#import "Hero.h"
+#import "Scene.h"
 // --- private interface ---------------------------------------------------------------------------
 
 @interface Game ()
@@ -42,7 +41,8 @@
     
     [Media releaseAtlas];
     [Media releaseSound];
-    [hero release];
+    [mScene release];
+    [mUI release];
     
     [super dealloc];
 }
@@ -63,57 +63,16 @@
     [Media initAtlas];      // loads your texture atlas -> see Media.h/Media.m
     [Media initSound];      // loads all your sounds    -> see Media.h/Media.m
     
+    mScene = [[Scene alloc] initWithWidth:mGameWidth Height:mGameHeight];
+    [self addChild:mScene];
     
-    // Create a background image. Since the demo must support all different kinds of orientations,
-    // we center it on the stage with the pivot point.
+    mUI = [[UI alloc] initWithScene:mScene];
+    [self addChild:mUI];
     
-    SPImage *background = [[SPImage alloc] initWithContentsOfFile:@"background1.png"];
-    background.pivotX = 0; //background.width / 2;
-    background.pivotY = 0; //background.height / 2;
-    background.x = 0;//mGameWidth / 2;
-    background.y = 0;//mGameHeight / 2;
-    background.scaleX = 1;
-    background.scaleY = mGameWidth/background.height;
-    [self addChild:background];
-    //[background release];
-    
-    Umbrella *umbrella = [[Umbrella alloc] initWithType:@"blue"];
-    umbrella.x = mGameHeight / 2 - 20;
-    umbrella.y = mGameWidth / 2 + 50;
-    [self addChild:umbrella];
-    [umbrella release];
-    
-    umbrella = [[Umbrella alloc] initWithType:@"blue"];
-    umbrella.x = mGameHeight / 2;
-    umbrella.y = mGameWidth / 2 + 50;
-    [self addChild:umbrella];
-    [umbrella release];
-    
-    umbrella = [[Umbrella alloc] initWithType:@"blue"];
-    umbrella.x = mGameHeight / 2 + 20;
-    umbrella.y = mGameWidth / 2 + 50;
-    [self addChild:umbrella];
-    [umbrella release];
-    
+    // [umbrella addEventListener:@selector(onEggTouched:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
+     
     // play a sound when the egg is touched
-    [umbrella addEventListener:@selector(onEggTouched:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
     
-    hero = [Hero hero];
-    hero.x = 200;
-    hero.y = 200;
-    [self addChild:hero];
-    
-    // Create a text field
-    
-    NSString *text = @"To find out how to create your own game out of this scaffold, " \
-                     @"have a look at the 'First Steps' section of the Sparrow website!";
-    
-    SPTextField *textField = [[SPTextField alloc] initWithWidth:280 height:80 text:text];
-    textField.x = (mGameWidth - textField.width) / 2;
-    textField.y = 20;
-    [self addChild:textField];
-    
-
     // The scaffold autorotates the game to all supported device orientations. 
     // Choose the orienations you want to support in the Target Settings ("Summary"-tab).
     // To update the game content accordingly, listen to the "RESIZE" event; it is dispatched
@@ -132,37 +91,13 @@
     // project to ARC (Automatic Reference Counting) by clicking on 
     // "Edit - Refactor - Convert to Objective-C ARC".
     // Those lines will then be removed from the project.
-    
-    [background release];
-
-    [textField release];
-    
-    
-    // Per default, this project compiles as a universal application. To change that, enter the 
-    // project info screen, and in the "Build"-tab, find the setting "Targeted device family".
-    //
-    // Now choose:  
-    //   * iPhone      -> iPhone only App
-    //   * iPad        -> iPad only App
-    //   * iPhone/iPad -> Universal App  
-    // 
-    // To support the iPad, the minimum "iOS deployment target" is "iOS 3.2".
 }
 
 - (void)onEggTouched:(SPTouchEvent *)event
 {
-    static int count = 0;
     NSSet *touches = [event touchesWithTarget:self andPhase:SPTouchPhaseEnded];
     if ([touches anyObject]) {
         [Media playSound:@"sound.caf"];
-        
-        count ++;
-        NSLog(@"count = %d", count);
-        if (count % 2 == 0) {
-            [hero up];
-        } else {
-            [hero down];
-        }
     }
 }
 
