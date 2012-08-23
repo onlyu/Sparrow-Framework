@@ -37,6 +37,7 @@
         
         [self rotateToInterfaceOrientation:orientation animationTime:0];
         [self addChild:mGame];
+        
     }
     
     return self;

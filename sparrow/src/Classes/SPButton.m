@@ -38,6 +38,7 @@
 @synthesize upState = mUpState;
 @synthesize downState = mDownState;
 @synthesize textBounds = mTextBounds;
+@synthesize isDown = mIsDown;
 
 #define MAX_DRAG_DIST 40
 
