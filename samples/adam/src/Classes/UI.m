@@ -40,21 +40,22 @@
         
         SPTexture *texture = [SPTexture textureWithContentsOfFile:@"button.png"];
         SPButton *button = [SPButton buttonWithUpState:texture];
-        button.x = 300;
-        button.y = 200;
+        button.x = 320;
+        button.y = 250;
+        button.width = 50;
+        button.height = 50;
         [self addChild:button];
         mRightButton = button;
         
-        //[button addEventListener:@selector(onRightButtonClick:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
-        
         SPButton *leftButton = [SPButton buttonWithUpState:texture];
-        leftButton.x = 200;
-        leftButton.y = 200;
+        leftButton.x = 250;
+        leftButton.y = 250;
+        leftButton.width = 50;
+        leftButton.height = 50;
         [self addChild:leftButton];
         mLeftButton = leftButton;
         
         [[SPStage mainStage].juggler addObject:self];
-        //[leftButton addEventListener:@selector(onLeftButtonClick:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
     }
     return self;
 }
@@ -68,17 +69,6 @@
     [super dealloc];
 }
 
-- (void) onRightButtonClick:(SPTouchEvent *)event
-{
-    mScene.hero.speedX += 0.1;
-    mSpeedText.text = [NSString stringWithFormat:@"%.2f",mScene.hero.speedX];
-}
-
-- (void) onLeftButtonClick:(SPTouchEvent *)event
-{
-    mScene.hero.speedX -= 0.1;
-    mSpeedText.text = [NSString stringWithFormat:@"%.2f",mScene.hero.speedX];
-}
 
 - (BOOL) isComplete
 {
@@ -87,8 +77,11 @@
 
 - (void) advanceTime:(double)seconds
 {
-    if ([mLeftButton ) {
-        <#statements#>
+    if (mLeftButton.isDown) {
+        mScene.hero.speedX -= 0.1;
+    } else if(mRightButton.isDown) {
+        mScene.hero.speedX += 0.1;
     }
+    mSpeedText.text = [NSString stringWithFormat:@"%.2f",mScene.hero.speedX];
 }
 @end

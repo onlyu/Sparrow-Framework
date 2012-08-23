@@ -57,7 +57,7 @@
         [[SPStage mainStage].juggler addObject:self];
         
         mSpeedY = 0;
-        mSpeedX = 0;
+        mSpeedX = 2.5;
         mAccelerate = 0.5;
         [self down];
     }
