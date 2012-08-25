@@ -10,8 +10,8 @@
 #import "Scene.h"
 
 @interface UI()
-- (void) onRightButtonClick:(SPTouchEvent *)event;
-- (void) onLeftButtonClick:(SPTouchEvent *)event;
+- (void) onRightButtonClick:(SPEvent *)event;
+- (void) onLeftButtonClick:(SPEvent *)event;
 @end
 
 @implementation UI
@@ -38,7 +38,7 @@
         [self addChild:mSpeedText];
         
         
-        SPTexture *texture = [SPTexture textureWithContentsOfFile:@"button.png"];
+        SPTexture *texture = [SPTexture textureWithContentsOfFile:@"qianjin.png"];
         SPButton *button = [SPButton buttonWithUpState:texture];
         button.x = 320;
         button.y = 250;
@@ -47,6 +47,7 @@
         [self addChild:button];
         mRightButton = button;
         
+        texture = [SPTexture textureWithContentsOfFile:@"houtui.png"];
         SPButton *leftButton = [SPButton buttonWithUpState:texture];
         leftButton.x = 250;
         leftButton.y = 250;
@@ -56,6 +57,10 @@
         mLeftButton = leftButton;
         
         [[SPStage mainStage].juggler addObject:self];
+        
+        [mRightButton addEventListener:@selector(OnRightButtonClick:) atObject:self forType:SP_EVENT_TYPE_TRIGGERED];
+        [mLeftButton addEventListener:@selector(OnLeftButtonClick:) atObject:self forType:SP_EVENT_TYPE_TRIGGERED];
+
     }
     return self;
 }
@@ -69,6 +74,15 @@
     [super dealloc];
 }
 
+- (void) onLeftButtonClick:(SPEvent *)event
+{
+    mScene.hero.speedX -= 0.1;
+}
+
+- (void) onRightButtonClick:(SPEvent *)event
+{
+    mScene.hero.speedX += 0.1;
+}
 
 - (BOOL) isComplete
 {
@@ -77,11 +91,13 @@
 
 - (void) advanceTime:(double)seconds
 {
+    /*
     if (mLeftButton.isDown) {
         mScene.hero.speedX -= 0.1;
     } else if(mRightButton.isDown) {
         mScene.hero.speedX += 0.1;
     }
+    */
     mSpeedText.text = [NSString stringWithFormat:@"%.2f",mScene.hero.speedX];
 }
 @end
