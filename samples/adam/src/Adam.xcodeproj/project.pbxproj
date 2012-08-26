@@ -12,6 +12,9 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		2570FBAA15E9D86300B34130 /* SDBaseState.m in Sources */ = {isa = PBXBuildFile; fileRef = 2570FBA915E9D86300B34130 /* SDBaseState.m */; };
+		2570FBC915EA2AF100B34130 /* SDFsm.m in Sources */ = {isa = PBXBuildFile; fileRef = 2570FBC815EA2AF100B34130 /* SDFsm.m */; };
+		2570FBCC15EA418500B34130 /* SDMenuState.m in Sources */ = {isa = PBXBuildFile; fileRef = 2570FBCB15EA418500B34130 /* SDMenuState.m */; };
+		2570FBCF15EA429300B34130 /* SDStateFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2570FBCE15EA429300B34130 /* SDStateFactory.m */; };
 		25B3DD5C15D17C1A000CE459 /* blue_umbrella.png in Resources */ = {isa = PBXBuildFile; fileRef = 25B3DD5B15D17C1A000CE459 /* blue_umbrella.png */; };
 		25B3DD6115D17C44000CE459 /* red_umbrella.png in Resources */ = {isa = PBXBuildFile; fileRef = 25B3DD5D15D17C44000CE459 /* red_umbrella.png */; };
 		25B3DD6215D17C44000CE459 /* green_umbrella.png in Resources */ = {isa = PBXBuildFile; fileRef = 25B3DD5E15D17C44000CE459 /* green_umbrella.png */; };
@@ -167,7 +170,7 @@
 		DE4A3D7A10FFB08200FDA492 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4A3D7910FFB08200FDA492 /* OpenGLES.framework */; };
 		DE4A3D7F10FFB08B00FDA492 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4A3D7E10FFB08B00FDA492 /* QuartzCore.framework */; };
 		DE4A3DB910FFB0FE00FDA492 /* libSparrow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4A3DB010FFB0DB00FDA492 /* libSparrow.a */; };
-		DE4A3DE510FFB2AF00FDA492 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4A3DE410FFB2AF00FDA492 /* Game.m */; };
+		DE4A3DE510FFB2AF00FDA492 /* SDGameContext.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4A3DE410FFB2AF00FDA492 /* SDGameContext.m */; };
 		DE4F80C714E1481C00655D44 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4F80C614E1481B00655D44 /* ViewController.m */; };
 		DE4F80D614E153E600655D44 /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4F80D514E153E600655D44 /* Media.m */; };
 		DE4F80E814E1541400655D44 /* sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = DE4F80DB14E1541400655D44 /* sound.caf */; };
@@ -221,6 +224,12 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2570FBA815E9D86300B34130 /* SDBaseState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDBaseState.h; sourceTree = "<group>"; };
 		2570FBA915E9D86300B34130 /* SDBaseState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDBaseState.m; sourceTree = "<group>"; };
+		2570FBC715EA2AF100B34130 /* SDFsm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDFsm.h; sourceTree = "<group>"; };
+		2570FBC815EA2AF100B34130 /* SDFsm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDFsm.m; sourceTree = "<group>"; };
+		2570FBCA15EA418500B34130 /* SDMenuState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDMenuState.h; sourceTree = "<group>"; };
+		2570FBCB15EA418500B34130 /* SDMenuState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDMenuState.m; sourceTree = "<group>"; };
+		2570FBCD15EA429300B34130 /* SDStateFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStateFactory.h; sourceTree = "<group>"; };
+		2570FBCE15EA429300B34130 /* SDStateFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDStateFactory.m; sourceTree = "<group>"; };
 		25B3DD5B15D17C1A000CE459 /* blue_umbrella.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_umbrella.png; sourceTree = "<group>"; };
 		25B3DD5D15D17C44000CE459 /* red_umbrella.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_umbrella.png; sourceTree = "<group>"; };
 		25B3DD5E15D17C44000CE459 /* green_umbrella.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_umbrella.png; sourceTree = "<group>"; };
@@ -386,8 +395,8 @@
 		DE4A3D7910FFB08200FDA492 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		DE4A3D7E10FFB08B00FDA492 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DE4A3DA210FFB0D400FDA492 /* Sparrow.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Sparrow.xcodeproj; sourceTree = SPARROW_SRC; };
-		DE4A3DE310FFB2AF00FDA492 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
-		DE4A3DE410FFB2AF00FDA492 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		DE4A3DE310FFB2AF00FDA492 /* SDGameContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDGameContext.h; sourceTree = "<group>"; };
+		DE4A3DE410FFB2AF00FDA492 /* SDGameContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDGameContext.m; sourceTree = "<group>"; };
 		DE4F80C514E1481B00655D44 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		DE4F80C614E1481B00655D44 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		DE4F80D414E153E600655D44 /* Media.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Media.h; sourceTree = "<group>"; };
@@ -461,6 +470,12 @@
 			children = (
 				2570FBA815E9D86300B34130 /* SDBaseState.h */,
 				2570FBA915E9D86300B34130 /* SDBaseState.m */,
+				2570FBC715EA2AF100B34130 /* SDFsm.h */,
+				2570FBC815EA2AF100B34130 /* SDFsm.m */,
+				2570FBCA15EA418500B34130 /* SDMenuState.h */,
+				2570FBCB15EA418500B34130 /* SDMenuState.m */,
+				2570FBCD15EA429300B34130 /* SDStateFactory.h */,
+				2570FBCE15EA429300B34130 /* SDStateFactory.m */,
 			);
 			name = State;
 			sourceTree = "<group>";
@@ -697,8 +712,8 @@
 			children = (
 				DE88294F14ECF11F00773036 /* GameController.h */,
 				DE88295014ECF11F00773036 /* GameController.m */,
-				DE4A3DE310FFB2AF00FDA492 /* Game.h */,
-				DE4A3DE410FFB2AF00FDA492 /* Game.m */,
+				DE4A3DE310FFB2AF00FDA492 /* SDGameContext.h */,
+				DE4A3DE410FFB2AF00FDA492 /* SDGameContext.m */,
 				DE4F80D414E153E600655D44 /* Media.h */,
 				DE4F80D514E153E600655D44 /* Media.m */,
 				25B3DD6515D1859D000CE459 /* Umbrella.h */,
@@ -1036,7 +1051,7 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
-				DE4A3DE510FFB2AF00FDA492 /* Game.m in Sources */,
+				DE4A3DE510FFB2AF00FDA492 /* SDGameContext.m in Sources */,
 				DE4F80C714E1481C00655D44 /* ViewController.m in Sources */,
 				DE4F80D614E153E600655D44 /* Media.m in Sources */,
 				DE88295114ECF12000773036 /* GameController.m in Sources */,
@@ -1049,6 +1064,9 @@
 				25B3F90015DBFC8A00DA142B /* Scene.m in Sources */,
 				25B3F90315DC025D00DA142B /* UI.m in Sources */,
 				2570FBAA15E9D86300B34130 /* SDBaseState.m in Sources */,
+				2570FBC915EA2AF100B34130 /* SDFsm.m in Sources */,
+				2570FBCC15EA418500B34130 /* SDMenuState.m in Sources */,
+				2570FBCF15EA429300B34130 /* SDStateFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

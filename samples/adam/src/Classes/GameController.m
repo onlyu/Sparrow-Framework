@@ -27,7 +27,7 @@
         UIInterfaceOrientation orientation = [self initialInterfaceOrientation];
         if (UIInterfaceOrientationIsLandscape(orientation)) SP_SWAP(gameWidth, gameHeight, float);
         
-        mGame = [[Game alloc] initWithWidth:gameWidth height:gameHeight];
+        mGame = [[SDGameContext alloc] initWithWidth:gameWidth height:gameHeight];
         
         mGame.pivotX = 0;//gameWidth  / 2;
         mGame.pivotY = 0;//gameHeight / 2;

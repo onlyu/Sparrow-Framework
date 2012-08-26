@@ -1,5 +1,5 @@
 //
-//  SDBaseState.h
+//  SDFsm.h
 //  Adam
 //
 //  Created by Lan Qing on 12-8-26.
@@ -12,23 +12,23 @@
 //  appreciated but not required.
 //
 
-/* 
- *the base game state
- */
-
 #import <Foundation/Foundation.h>
+#import "SDBaseState.h"
 
-@interface SDBaseState : NSObject
+@interface SDFsm : NSObject
 {
     @private
-    BOOL mIsSuspend;
+    SDBaseState *mCurrentState;
+    NSMutableArray *mStates;
 }
 
-- (void) enter:(NSString *)message fromState:(NSString *)stateName;
++ (SDFsm *) fsmWithStates:(NSArray *)states;
+
+- (id) initWithStates:(NSArray *)states;
+
+- (void) enter:(NSString *)stateName messge:(NSString *)message;
 - (void) leave;
 - (void) update:(float)dt;
-- (void) suspended:(float)dt;
-- (void) suspend;
-- (void) resume:(NSString *)message fromState:(NSString *)stateName;
+- (void) message:(NSString *)message;
 
 @end

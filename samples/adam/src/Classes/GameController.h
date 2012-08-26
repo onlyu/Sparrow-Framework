@@ -4,12 +4,12 @@
 //
 
 #import "SPStage.h"
-#import "Game.h"
+#import "SDGameContext.h"
 
 @interface GameController : SPStage
 {
   @private
-    Game *mGame;
+    SDGameContext *mGame;
 }
 
 - (void)rotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
