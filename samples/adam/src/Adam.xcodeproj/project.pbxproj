@@ -11,6 +11,7 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		2570FBAA15E9D86300B34130 /* SDBaseState.m in Sources */ = {isa = PBXBuildFile; fileRef = 2570FBA915E9D86300B34130 /* SDBaseState.m */; };
 		25B3DD5C15D17C1A000CE459 /* blue_umbrella.png in Resources */ = {isa = PBXBuildFile; fileRef = 25B3DD5B15D17C1A000CE459 /* blue_umbrella.png */; };
 		25B3DD6115D17C44000CE459 /* red_umbrella.png in Resources */ = {isa = PBXBuildFile; fileRef = 25B3DD5D15D17C44000CE459 /* red_umbrella.png */; };
 		25B3DD6215D17C44000CE459 /* green_umbrella.png in Resources */ = {isa = PBXBuildFile; fileRef = 25B3DD5E15D17C44000CE459 /* green_umbrella.png */; };
@@ -218,6 +219,8 @@
 		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* Adam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Adam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2570FBA815E9D86300B34130 /* SDBaseState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDBaseState.h; sourceTree = "<group>"; };
+		2570FBA915E9D86300B34130 /* SDBaseState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDBaseState.m; sourceTree = "<group>"; };
 		25B3DD5B15D17C1A000CE459 /* blue_umbrella.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_umbrella.png; sourceTree = "<group>"; };
 		25B3DD5D15D17C44000CE459 /* red_umbrella.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_umbrella.png; sourceTree = "<group>"; };
 		25B3DD5E15D17C44000CE459 /* green_umbrella.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_umbrella.png; sourceTree = "<group>"; };
@@ -434,6 +437,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2570FBA715E9D7DA00B34130 /* State */,
 				DECF454314F2E45A006A4287 /* Support */,
 				DE4F80D714E153EA00655D44 /* Game */,
 				1D3623240D0F684500981E51 /* AppDelegate.h */,
@@ -450,6 +454,15 @@
 				1D6058910D05DD3D006BFB54 /* Adam.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		2570FBA715E9D7DA00B34130 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				2570FBA815E9D86300B34130 /* SDBaseState.h */,
+				2570FBA915E9D86300B34130 /* SDBaseState.m */,
+			);
+			name = State;
 			sourceTree = "<group>";
 		};
 		25B4414015D81FC200E98AB6 /* panda */ = {
@@ -1035,6 +1048,7 @@
 				25BB5E6215DAAF57008FAA0F /* Background.m in Sources */,
 				25B3F90015DBFC8A00DA142B /* Scene.m in Sources */,
 				25B3F90315DC025D00DA142B /* UI.m in Sources */,
+				2570FBAA15E9D86300B34130 /* SDBaseState.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
