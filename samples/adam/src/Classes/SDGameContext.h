@@ -16,7 +16,7 @@
 #import <UIKit/UIDevice.h>
 #import "SDFsm.h"
 
-@interface SDGameContext : SPSprite
+@interface SDGameContext : SPSprite <SPAnimatable>
 {
   @private 
     float mGameWidth;
@@ -34,8 +34,9 @@
 
 @property (nonatomic, assign) float gameWidth;
 @property (nonatomic, assign) float gameHeight;
+@property (nonatomic, assign) SPSprite *ui;
+@property (nonatomic, assign) SPSprite *scene;
 
-- (void) setUI:(SPSprite *)ui;
-- (void) setScene:(SPSprite *)scene;
+- (void) toState:(NSString *)stateName;
 
 @end

@@ -41,17 +41,11 @@
         mHero.y = 200;
         [self addChild:mHero];
         
-        [[SPStage mainStage].juggler addObject:self];
     }
     return self;
 }
 
-- (BOOL)isComplete
-{
-    return NO;
-}
-
-- (void) advanceTime:(double)seconds
+- (void) update:(float)dt
 {
     self.x = -(mHero.x - 200);
 }

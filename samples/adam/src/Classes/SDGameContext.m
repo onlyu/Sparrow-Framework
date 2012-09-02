@@ -31,8 +31,8 @@
 
 @implementation SDGameContext
 
-@synthesize gameWidth  = mGameWidth;
-@synthesize gameHeight = mGameHeight;
+@synthesize gameWidth  = mGameHeight;
+@synthesize gameHeight = mGameWidth;
 
 static SDGameContext *sGameContext = nil;
 + (SDGameContext *)sharedGameContext
@@ -83,15 +83,16 @@ static SDGameContext *sGameContext = nil;
     [self addChild:mSceneLayer];
     [self addChild:mUILayer];
     
-    Scene *scene = [[Scene alloc] initWithWidth:mGameWidth Height:mGameHeight];
-    [self setUI:[[UI alloc] initWithScene:scene]];
-    [self setScene:scene];
+    //Scene *scene = [[Scene alloc] initWithWidth:mGameWidth Height:mGameHeight];
+    //self.ui = [[UI alloc] initWithScene:scene];
+    //self.scene = scene;
     
-    mFsm = [SDFsm fsmWithStates:[NSArray arrayWithObjects:@"menu", @"menu", nil]];
-    [mFsm enter:@"menu" messge:@"enterMenu"];
+    mFsm = [SDFsm fsmWithStates:[NSArray arrayWithObjects:@"Menu", @"Menu", nil]];
+    [mFsm enter:@"Menu" messge:@"enterMenu"];
     
  
     [self addEventListener:@selector(onResize:) atObject:self forType:SP_EVENT_TYPE_RESIZE];
+    [[SPStage mainStage].juggler addObject:self];
 }
 
 - (void)onEggTouched:(SPTouchEvent *)event
@@ -108,16 +109,41 @@ static SDGameContext *sGameContext = nil;
           event.isPortrait ? @"portrait" : @"landscape");
 }
 
-- (void) setUI:(SPSprite *)ui
+- (void) setUi:(SPSprite *)ui
 {
     [mUILayer removeAllChildren];
     [mUILayer addChild:ui];
+}
+
+- (SPSprite *)ui
+{
+    return [mUILayer childAtIndex:0];
 }
 
 - (void) setScene:(SPSprite *)scene
 {
     [mSceneLayer removeAllChildren];
     [mSceneLayer addChild:scene];
+}
+
+- (SPSprite *)scene
+{
+    return [mSceneLayer childAtIndex:0];
+}
+
+- (void) toState:(NSString *)stateName
+{
+    [mFsm enter:stateName messge:@""];
+}
+
+- (BOOL) isComplete
+{
+    return NO;
+}
+
+- (void) advanceTime:(double)seconds
+{
+    [mFsm update:seconds];
 }
 
 @end

@@ -15,6 +15,8 @@
 		2570FBC915EA2AF100B34130 /* SDFsm.m in Sources */ = {isa = PBXBuildFile; fileRef = 2570FBC815EA2AF100B34130 /* SDFsm.m */; };
 		2570FBCC15EA418500B34130 /* SDMenuState.m in Sources */ = {isa = PBXBuildFile; fileRef = 2570FBCB15EA418500B34130 /* SDMenuState.m */; };
 		2570FBCF15EA429300B34130 /* SDStateFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2570FBCE15EA429300B34130 /* SDStateFactory.m */; };
+		2570FBD215EA75AA00B34130 /* SDGamePlayState.m in Sources */ = {isa = PBXBuildFile; fileRef = 2570FBD115EA75AA00B34130 /* SDGamePlayState.m */; };
+		2570FBD515EA7E2E00B34130 /* SDGameOverState.m in Sources */ = {isa = PBXBuildFile; fileRef = 2570FBD415EA7E2D00B34130 /* SDGameOverState.m */; };
 		25B3DD5C15D17C1A000CE459 /* blue_umbrella.png in Resources */ = {isa = PBXBuildFile; fileRef = 25B3DD5B15D17C1A000CE459 /* blue_umbrella.png */; };
 		25B3DD6115D17C44000CE459 /* red_umbrella.png in Resources */ = {isa = PBXBuildFile; fileRef = 25B3DD5D15D17C44000CE459 /* red_umbrella.png */; };
 		25B3DD6215D17C44000CE459 /* green_umbrella.png in Resources */ = {isa = PBXBuildFile; fileRef = 25B3DD5E15D17C44000CE459 /* green_umbrella.png */; };
@@ -230,6 +232,10 @@
 		2570FBCB15EA418500B34130 /* SDMenuState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDMenuState.m; sourceTree = "<group>"; };
 		2570FBCD15EA429300B34130 /* SDStateFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStateFactory.h; sourceTree = "<group>"; };
 		2570FBCE15EA429300B34130 /* SDStateFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDStateFactory.m; sourceTree = "<group>"; };
+		2570FBD015EA75AA00B34130 /* SDGamePlayState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDGamePlayState.h; sourceTree = "<group>"; };
+		2570FBD115EA75AA00B34130 /* SDGamePlayState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDGamePlayState.m; sourceTree = "<group>"; };
+		2570FBD315EA7E2C00B34130 /* SDGameOverState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDGameOverState.h; sourceTree = "<group>"; };
+		2570FBD415EA7E2D00B34130 /* SDGameOverState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDGameOverState.m; sourceTree = "<group>"; };
 		25B3DD5B15D17C1A000CE459 /* blue_umbrella.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_umbrella.png; sourceTree = "<group>"; };
 		25B3DD5D15D17C44000CE459 /* red_umbrella.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_umbrella.png; sourceTree = "<group>"; };
 		25B3DD5E15D17C44000CE459 /* green_umbrella.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_umbrella.png; sourceTree = "<group>"; };
@@ -476,6 +482,10 @@
 				2570FBCB15EA418500B34130 /* SDMenuState.m */,
 				2570FBCD15EA429300B34130 /* SDStateFactory.h */,
 				2570FBCE15EA429300B34130 /* SDStateFactory.m */,
+				2570FBD015EA75AA00B34130 /* SDGamePlayState.h */,
+				2570FBD115EA75AA00B34130 /* SDGamePlayState.m */,
+				2570FBD315EA7E2C00B34130 /* SDGameOverState.h */,
+				2570FBD415EA7E2D00B34130 /* SDGameOverState.m */,
 			);
 			name = State;
 			sourceTree = "<group>";
@@ -1067,6 +1077,8 @@
 				2570FBC915EA2AF100B34130 /* SDFsm.m in Sources */,
 				2570FBCC15EA418500B34130 /* SDMenuState.m in Sources */,
 				2570FBCF15EA429300B34130 /* SDStateFactory.m in Sources */,
+				2570FBD215EA75AA00B34130 /* SDGamePlayState.m in Sources */,
+				2570FBD515EA7E2E00B34130 /* SDGameOverState.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

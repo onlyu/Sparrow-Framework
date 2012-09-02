@@ -58,8 +58,8 @@
         
         [[SPStage mainStage].juggler addObject:self];
         
-        [mRightButton addEventListener:@selector(onRightButtonClick:) atObject:self forType:SP_EVENT_TYPE_TRIGGERED];
-        [mLeftButton addEventListener:@selector(onLeftButtonClick:) atObject:self forType:SP_EVENT_TYPE_TRIGGERED];
+        [mRightButton addEventListener:@selector(onRightButtonClick:) atObject:self forType:SD_EVENT_CLICKED];
+        [mLeftButton addEventListener:@selector(onLeftButtonClick:) atObject:self forType:SD_EVENT_CLICKED];
 
     }
     return self;

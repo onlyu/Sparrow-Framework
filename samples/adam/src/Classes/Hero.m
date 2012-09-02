@@ -8,6 +8,7 @@
 
 #import "Hero.h"
 #import "UmbrellaManager.h"
+#import "SDGameContext.h"
 
 @implementation Hero
 
@@ -113,6 +114,10 @@
     }
     self.y += mSpeedY;
     self.x += mSpeedX;
+    
+    if (self.y > 400) {
+        [[SDGameContext sharedGameContext] toState:@"GameOver"];
+    }
 }
 
 - (BOOL)isComplete

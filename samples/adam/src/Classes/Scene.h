@@ -9,7 +9,7 @@
 #import "SPSprite.h"
 #import "Hero.h"
 
-@interface Scene : SPSprite <SPAnimatable>
+@interface Scene : SPSprite 
 {
     @private
     float mWindowWidth;
@@ -20,4 +20,7 @@
 - (Scene *)initWithWidth:(int)width Height:(int)height;
 
 @property (nonatomic, readonly) Hero *hero;
+
+- (void) update:(float) dt;
+
 @end

@@ -57,7 +57,7 @@
 
 - (void) update:(float)dt
 {
-    
+    [mCurrentState update:dt];
 }
 
 - (void) message:(NSString *)message

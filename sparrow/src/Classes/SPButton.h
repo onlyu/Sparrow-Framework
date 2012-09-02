@@ -17,7 +17,7 @@
 @class SPTextField;
 @class SPSprite;
 
-#define SP_EVENT_TYPE_TRIGGERED @"triggered"
+#define SD_EVENT_CLICKED @"triggered"
 
 /** ------------------------------------------------------------------------------------------------
 
@@ -30,7 +30,7 @@
  as those of SPTextField are provided. In addition, you can move the text to a certain position
  with the help of the `textBounds` property.
  
- To react on touches on a button, there is special event type: `SP_EVENT_TYPE_TRIGGERED`. Use
+ To react on touches on a button, there is special event type: `SD_EVENT_CLICKED`. Use
  this event instead of normal touch events - that way, the button will behave just like standard
  iOS interface buttons.
  
