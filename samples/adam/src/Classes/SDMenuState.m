@@ -45,11 +45,37 @@
         SPButton *startGameButton = [SPButton buttonWithUpState:texture];
         //startGameButton.width = 100;
         //startGameButton.height = 50;
-        startGameButton.x = 100;
-        startGameButton.y = 20;
+        startGameButton.x = 180;
+        startGameButton.y = 100;
+        startGameButton.scaleX = 0.35;
+        startGameButton.scaleY = 0.35;
         //startGameButton.textBounds = [SPRectangle rectangleWithX:10 y:10 width:80 height:40];
         startGameButton.text = @"New Game";
         [mUI addChild:startGameButton];
+        
+
+        SPButton *soundToggle = [SPButton buttonWithUpState:texture];
+        soundToggle.x = 0;
+        soundToggle.y = 0;
+        soundToggle.scaleX = 0.2;
+        soundToggle.scaleY = 0.2;
+        [mUI addChild:soundToggle];
+        
+        SPButton *gameCenter = [SPButton buttonWithUpState:texture];
+        gameCenter.x = 400;
+        gameCenter.y = 0;
+        gameCenter.scaleX = 0.5;
+        gameCenter.scaleY = 0.5;
+        gameCenter.text = @"Game Center";
+        [mUI addChild:gameCenter];
+        
+        SPButton *storeButton = [SPButton buttonWithUpState:texture];
+        storeButton.x = 400;
+        storeButton.y = 200;
+        storeButton.scaleX = 0.3;
+        storeButton.scaleY = 0.3;
+        storeButton.text = @"Store";
+        [mUI addChild:storeButton];
         
         [startGameButton addEventListener:@selector(startGame:) atObject:self forType:SD_EVENT_CLICKED];
     }

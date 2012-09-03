@@ -9,7 +9,7 @@
 #import "SPSprite.h"
 #import "SPImage.h"
 
-@interface Hero : SPSprite<SPAnimatable>
+@interface Hero : SPSprite
 {
     SPImage *mBody;
     SPImage *mUmbrella;
@@ -24,6 +24,7 @@
 + (Hero *)hero; 
 - (void)up;
 - (void)down;
+- (void)update:(float) dt;
 
 @property (nonatomic,assign) float speedX;
 

@@ -47,6 +47,7 @@
 
 - (void) update:(float)dt
 {
+    [mHero update:dt];
     self.x = -(mHero.x - 200);
 }
 

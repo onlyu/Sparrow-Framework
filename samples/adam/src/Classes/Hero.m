@@ -2,8 +2,8 @@
 //  Hero.m
 //  Adam
 //
-//  Created by 清 兰 on 12-8-13.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//  Created by Jr.White on 12-8-13.
+//  Copyright (c) 2012 SundayGame. All rights reserved.
 //
 
 #import "Hero.h"
@@ -55,7 +55,7 @@
         mBody.pivotY = 66;
         [self addChild:mBody];
         
-        [[SPStage mainStage].juggler addObject:self];
+        //[[SPStage mainStage].juggler addObject:self];
         
         mSpeedY = 0;
         mSpeedX = 2.5;
@@ -100,7 +100,7 @@
     mUmbrella1.visible = false;
 }
 
-- (void)advanceTime:(double)seconds
+- (void)update:(float)seconds
 {
     UmbrellaManager *mgr = [UmbrellaManager instance];
     mSpeedY += mAccelerate;
@@ -115,7 +115,7 @@
     self.y += mSpeedY;
     self.x += mSpeedX;
     
-    if (self.y > 400) {
+    if (self.y > 300) {
         [[SDGameContext sharedGameContext] toState:@"GameOver"];
     }
 }

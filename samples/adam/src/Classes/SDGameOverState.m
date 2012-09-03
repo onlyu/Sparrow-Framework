@@ -21,6 +21,9 @@
         SPTextField *textField = [SPTextField textFieldWithText:text1];
         textField.x = 100;
         textField.y = 20;
+        textField.fontSize = 30;
+        textField.width = 300;
+        textField.height = 200;
         [mUI addChild:textField];
 
     }
