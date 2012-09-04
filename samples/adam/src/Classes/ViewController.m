@@ -6,7 +6,7 @@
 #import <UIKit/UIDevice.h>
 
 #import "ViewController.h"
-#import "GameController.h"
+#import "SDGameController.h"
 
 @implementation ViewController
 
@@ -73,7 +73,7 @@
                                          duration:(NSTimeInterval)duration
 {
     // rotate Sparrow content
-    GameController *gameController = (GameController *)mSparrowView.stage;
+    SDGameController *gameController = (SDGameController *)mSparrowView.stage;
     [gameController rotateToInterfaceOrientation:interfaceOrientation
                                    animationTime:duration];
 }

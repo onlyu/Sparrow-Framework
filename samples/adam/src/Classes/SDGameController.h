@@ -6,7 +6,7 @@
 #import "SPStage.h"
 #import "SDGameContext.h"
 
-@interface GameController : SPStage
+@interface SDGameController : SPStage
 {
   @private
     SDGameContext *mGame;

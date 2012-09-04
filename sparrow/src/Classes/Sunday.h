@@ -29,7 +29,7 @@
 #import "SPRenderTexture.h"
 #import "SPGLTexture.h"
 #import "SPTextureAtlas.h"
-#import "SPEvent.h"
+#import "SDEvent.h"
 #import "SPTouchEvent.h"
 #import "SPEnterFrameEvent.h"
 #import "SPJuggler.h"

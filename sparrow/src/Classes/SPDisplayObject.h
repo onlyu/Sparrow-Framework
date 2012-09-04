@@ -120,7 +120,7 @@
 - (SPDisplayObject*)hitTestPoint:(SPPoint*)localPoint forTouch:(BOOL)isTouch;
 
 /// Dispatches an event on all children (recursively). The event must not bubble. */
-- (void)broadcastEvent:(SPEvent *)event;
+- (void)broadcastEvent:(SDEvent *)event;
 
 /// ----------------
 /// @name Properties

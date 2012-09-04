@@ -89,7 +89,7 @@ static NSMutableDictionary *bitmapFonts = nil;
     return [self initWithText:@""];
 }
 
-- (void)onCompile:(SPEvent *)event
+- (void)onCompile:(SDEvent *)event
 {
     if (mRequiresRedraw) [self redrawContents];
 }

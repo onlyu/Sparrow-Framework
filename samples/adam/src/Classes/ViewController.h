@@ -5,7 +5,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "GameController.h"
+#import "SDGameController.h"
 
 @interface ViewController : UIViewController
 {

@@ -12,15 +12,15 @@
 #import "SPAnimatable.h"
 #import "SPButton.h"
 
-@interface UI : SPSprite<SPAnimatable>
+@interface SDPlayUI : SPSprite
 {
 @private
-    Scene *mScene;
     SPTextField *mSpeedText;
+    SPTextField *mDistanceText;
+    SPTextField *mMoneyText;
     SPButton *mLeftButton;
     SPButton *mRightButton;
 }
 
-- (UI *)initWithScene:(Scene *)scene;
-
+- (void) update:(double)dt;
 @end

@@ -6,13 +6,12 @@
 //  Copyright (c) 2012 SundayGame. All rights reserved.
 //
 
-#import "Hero.h"
+#import "SDHero.h"
 #import "UmbrellaManager.h"
 #import "SDGameContext.h"
+#import "SDPlayData.h"
 
-@implementation Hero
-
-@synthesize speedX = mSpeedX;
+@implementation SDHero
 
 - (id)init
 {
@@ -58,7 +57,6 @@
         //[[SPStage mainStage].juggler addObject:self];
         
         mSpeedY = 0;
-        mSpeedX = 2.5;
         mAccelerate = 0.5;
         [self down];
     }
@@ -79,9 +77,9 @@
 }
 
 
-+ (Hero *)hero
++ (SDHero *)hero
 {
-    return [[Hero alloc] init];
+    return [[SDHero alloc] init];
 }
 
 - (void)down
@@ -113,7 +111,11 @@
         [self down];
     }
     self.y += mSpeedY;
-    self.x += mSpeedX;
+    
+    
+    SDPlayData *playData = [SDPlayData sharedSDPlayData];
+    self.x += playData.speed;
+    playData.distance = self.x;
     
     if (self.y > 300) {
         [[SDGameContext sharedGameContext] toState:@"GameOver"];

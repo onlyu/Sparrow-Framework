@@ -9,10 +9,10 @@
 //  it under the terms of the Simplified BSD License.
 //
 
-#import "SPEvent.h"
-#import "SPEvent_Internal.h"
+#import "SDEvent.h"
+#import "SDEvent_Internal.h"
 
-@implementation SPEvent
+@implementation SDEvent
 
 @synthesize target = mTarget;
 @synthesize currentTarget = mCurrentTarget;
@@ -49,14 +49,14 @@
     mStopsPropagation = YES;
 }
 
-+ (SPEvent*)eventWithType:(NSString*)type bubbles:(BOOL)bubbles
++ (SDEvent*)eventWithType:(NSString*)type bubbles:(BOOL)bubbles
 {
-    return [[[SPEvent alloc] initWithType:type bubbles:bubbles] autorelease];
+    return [[[SDEvent alloc] initWithType:type bubbles:bubbles] autorelease];
 }
 
-+ (SPEvent*)eventWithType:(NSString*)type
++ (SDEvent*)eventWithType:(NSString*)type
 {
-    return [[[SPEvent alloc] initWithType:type] autorelease];
+    return [[[SDEvent alloc] initWithType:type] autorelease];
 }
 
 - (void)dealloc
@@ -71,7 +71,7 @@
 
 // -------------------------------------------------------------------------------------------------
 
-@implementation SPEvent (Internal)
+@implementation SDEvent (Internal)
 
 - (BOOL)stopsImmediatePropagation
 { 

@@ -9,7 +9,7 @@
 #import "SPSprite.h"
 #import "SPImage.h"
 
-@interface Hero : SPSprite
+@interface SDHero : SPSprite
 {
     SPImage *mBody;
     SPImage *mUmbrella;
@@ -18,14 +18,11 @@
     SPImage *mLeg1;
     float mAccelerate;
     float mSpeedY;
-    float mSpeedX;
 }
 
-+ (Hero *)hero; 
++ (SDHero *)hero; 
 - (void)up;
 - (void)down;
 - (void)update:(float) dt;
-
-@property (nonatomic,assign) float speedX;
 
 @end

@@ -102,7 +102,7 @@ typedef float (*FnPtrTransition) (id, SEL, float);
     if (previousTime <= 0 && mCurrentTime > 0 && mLoopCount == 0 &&
         [self hasEventListenerForType:SP_EVENT_TYPE_TWEEN_STARTED])
     {
-        SPEvent *event = [[SPEvent alloc] initWithType:SP_EVENT_TYPE_TWEEN_STARTED];        
+        SDEvent *event = [[SDEvent alloc] initWithType:SP_EVENT_TYPE_TWEEN_STARTED];        
         [self dispatchEvent:event];
         [event release];        
     }   
@@ -126,7 +126,7 @@ typedef float (*FnPtrTransition) (id, SEL, float);
    
     if ([self hasEventListenerForType:SP_EVENT_TYPE_TWEEN_UPDATED])
     {
-        SPEvent *event = [[SPEvent alloc] initWithType:SP_EVENT_TYPE_TWEEN_UPDATED];
+        SDEvent *event = [[SDEvent alloc] initWithType:SP_EVENT_TYPE_TWEEN_UPDATED];
         [self dispatchEvent:event];    
         [event release];
     }
@@ -150,7 +150,7 @@ typedef float (*FnPtrTransition) (id, SEL, float);
         
         if ([self hasEventListenerForType:SP_EVENT_TYPE_TWEEN_COMPLETED])
         {
-            SPEvent *event = [[SPEvent alloc] initWithType:SP_EVENT_TYPE_TWEEN_COMPLETED];
+            SDEvent *event = [[SDEvent alloc] initWithType:SP_EVENT_TYPE_TWEEN_COMPLETED];
             [self dispatchEvent:event];
             [event release];
         }

@@ -187,7 +187,7 @@
 {
     if (!mLoop)
     {
-        SPEvent *event = [[SPEvent alloc] initWithType:SP_EVENT_TYPE_SOUND_COMPLETED];
+        SDEvent *event = [[SDEvent alloc] initWithType:SP_EVENT_TYPE_SOUND_COMPLETED];
         [self dispatchEvent:event];
         [event release];
     }

@@ -9,12 +9,12 @@
 #import "SDBaseState.h"
 #import "Sunday.h"
 #import "Scene.h"
-#import "UI.h"
+#import "SDPlayUI.h"
 
 @interface SDGamePlayState : SDBaseState
 {
     @private
-    UI *mUI;
+    SDPlayUI *mUI;
     Scene *mScene;
 }
 

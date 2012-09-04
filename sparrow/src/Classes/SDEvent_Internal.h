@@ -10,9 +10,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SPEvent.h"
+#import "SDEvent.h"
 
-@interface SPEvent (Internal)
+@interface SDEvent (Internal)
 
 - (BOOL)stopsImmediatePropagation;
 - (BOOL)stopsPropagation;

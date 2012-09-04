@@ -13,8 +13,6 @@
 //
 
 #import "SDGameContext.h" 
-#import "Scene.h"
-#import "UI.h"
 
 // --- private interface ---------------------------------------------------------------------------
 

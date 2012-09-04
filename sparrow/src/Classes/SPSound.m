@@ -12,7 +12,7 @@
 #import "SPSound.h"
 #import "SPSoundChannel.h"
 #import "SPMacros.h"
-#import "SPEvent.h"
+#import "SDEvent.h"
 #import "SPALSound.h"
 #import "SPAVSound.h"
 #import "SPUtils.h"
@@ -166,7 +166,7 @@
     [mPlayingChannels addObject:channel];
 }
 
-- (void)onSoundCompleted:(SPEvent *)event
+- (void)onSoundCompleted:(SDEvent *)event
 {
     SPSoundChannel *channel = (SPSoundChannel *)event.target;
     [channel stop];

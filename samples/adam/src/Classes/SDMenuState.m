@@ -11,12 +11,12 @@
 
 // --------------------------- private method ---------------------------
 @interface SDMenuState()
-- (void) startGame:(SPEvent *)event;
+- (void) startGame:(SDEvent *)event;
 @end
 
 @implementation SDMenuState
 
-- (void) startGame:(SPEvent *)event
+- (void) startGame:(SDEvent *)event
 {
     
     SDGameContext *context = [SDGameContext sharedGameContext];
@@ -35,47 +35,80 @@
         
         SDGameContext *context = [SDGameContext sharedGameContext];
         
-        SPImage *background = [[SPImage alloc] initWithContentsOfFile:@"background1.png"];
+        SPImage *background = [[SPImage alloc] initWithContentsOfFile:@"background.png"];
         [mScene addChild:background];
         background.scaleX = context.gameWidth/background.width;
         background.scaleY = context.gameHeight/background.height;
         [background release];
         
-        SPTexture *texture = [SPTexture textureWithContentsOfFile:@"qianjin.png"];
+        SPTexture *texture = [SPTexture textureWithContentsOfFile:@"start.png"];
         SPButton *startGameButton = [SPButton buttonWithUpState:texture];
-        //startGameButton.width = 100;
-        //startGameButton.height = 50;
         startGameButton.x = 180;
-        startGameButton.y = 100;
-        startGameButton.scaleX = 0.35;
-        startGameButton.scaleY = 0.35;
-        //startGameButton.textBounds = [SPRectangle rectangleWithX:10 y:10 width:80 height:40];
-        startGameButton.text = @"New Game";
+        startGameButton.y = 70;
+        startGameButton.scaleX = 0.5;
+        startGameButton.scaleY = 0.5;
         [mUI addChild:startGameButton];
         
-
-        SPButton *soundToggle = [SPButton buttonWithUpState:texture];
-        soundToggle.x = 0;
-        soundToggle.y = 0;
-        soundToggle.scaleX = 0.2;
-        soundToggle.scaleY = 0.2;
+        SPImage *leftCloud = [SPImage imageWithContentsOfFile:@"cloud.png"];
+        leftCloud.x = 0;
+        leftCloud.y = 0;
+        leftCloud.scaleX = 0.5;
+        leftCloud.scaleY = 0.5;
+        [mUI addChild:leftCloud];
+        
+        SPTexture *soundTexture = [SPTexture textureWithContentsOfFile:@"sound_botton.png"];
+        SPButton *soundToggle = [SPButton buttonWithUpState:soundTexture];
+        soundToggle.x = 20;
+        soundToggle.y = 10;
+        soundToggle.scaleX = 0.5;
+        soundToggle.scaleY = 0.5;
         [mUI addChild:soundToggle];
         
-        SPButton *gameCenter = [SPButton buttonWithUpState:texture];
+        SPTexture *settingTexture = [SPTexture textureWithContentsOfFile:@"setting_botton.png"];
+        SPButton *settingButton = [SPButton buttonWithUpState:settingTexture];
+        settingButton.x = 60;
+        settingButton.y = 10;
+        settingButton.scaleX = 0.5;
+        settingButton.scaleY = 0.5;
+        [mUI addChild:settingButton];
+        
+        SPTexture *gameCenterTexture = [SPTexture textureWithContentsOfFile:@"game_center.png"];
+        SPButton *gameCenter = [SPButton buttonWithUpState:gameCenterTexture];
         gameCenter.x = 400;
         gameCenter.y = 0;
         gameCenter.scaleX = 0.5;
         gameCenter.scaleY = 0.5;
-        gameCenter.text = @"Game Center";
         [mUI addChild:gameCenter];
         
-        SPButton *storeButton = [SPButton buttonWithUpState:texture];
+        SPTexture *storeTexture = [SPTexture textureWithContentsOfFile:@"store.png"];        
+        SPButton *storeButton = [SPButton buttonWithUpState:storeTexture];
         storeButton.x = 400;
         storeButton.y = 200;
-        storeButton.scaleX = 0.3;
-        storeButton.scaleY = 0.3;
-        storeButton.text = @"Store";
+        storeButton.scaleX = 0.5;
+        storeButton.scaleY = 0.5;
         [mUI addChild:storeButton];
+        
+        SPImage *scoreBoard = [SPImage imageWithContentsOfFile:@"score.png"];
+        scoreBoard.x = 20;
+        scoreBoard.y = 70;
+        scoreBoard.scaleX = 0.5;
+        scoreBoard.scaleY = 0.5;
+        [mUI addChild:scoreBoard];
+        
+        SPImage *character = [SPImage imageWithContentsOfFile:@"charactor.png"];
+        character.x = 20;
+        character.y = 170;
+        character.scaleX = 0.5;
+        character.scaleY = 0.5;
+        [mUI addChild:character];
+        
+        SPImage *logo = [SPImage imageWithContentsOfFile:@"logo.png"];
+        logo.x = 180;
+        logo.y = 30;
+        logo.scaleX = 0.5;
+        logo.scaleY = 0.5;
+        [mUI addChild:logo];
+        
         
         [startGameButton addEventListener:@selector(startGame:) atObject:self forType:SD_EVENT_CLICKED];
     }

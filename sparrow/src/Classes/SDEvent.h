@@ -37,7 +37,7 @@
  
 ------------------------------------------------------------------------------------------------- */
 
-@interface SPEvent : NSObject
+@interface SDEvent : NSObject
 {
   @private
     SPEventDispatcher *mTarget;
@@ -59,10 +59,10 @@
 - (id)initWithType:(NSString*)type;
 
 /// Factory method.
-+ (SPEvent*)eventWithType:(NSString*)type bubbles:(BOOL)bubbles;
++ (SDEvent*)eventWithType:(NSString*)type bubbles:(BOOL)bubbles;
 
 /// Factory method.
-+ (SPEvent*)eventWithType:(NSString*)type;
++ (SDEvent*)eventWithType:(NSString*)type;
 
 /// -------------
 /// @name Methods

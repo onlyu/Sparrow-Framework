@@ -2,12 +2,13 @@
 //  SDGamePlayState.m
 //  Adam
 //
-//  Created by 清 兰 on 12-8-26.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//  Created by Jr.White on 12-8-26.
+//  Copyright (c) 2012 SundayGame. All rights reserved.
 //
 
 #import "SDGamePlayState.h"
 #import "SDGameContext.h"
+#import "SDPlayData.h"
 
 @implementation SDGamePlayState
 
@@ -17,7 +18,7 @@
         SDGameContext *context = [SDGameContext sharedGameContext];
         
         mScene = [[Scene alloc] initWithWidth:context.gameWidth Height:context.gameHeight];
-        mUI = [[UI alloc] initWithScene:mScene];
+        mUI = [[SDPlayUI alloc] init];
     }
     return self;
 }
@@ -34,11 +35,14 @@
     SDGameContext *context = [SDGameContext sharedGameContext];
     context.ui = mUI;
     context.scene = mScene;
+    [mScene reset];
+    [[SDPlayData sharedSDPlayData] reset];
 }
 
 - (void) update:(float)dt
 {
     [mScene update:dt];
+    [mUI update:dt];
 }
 
 @end

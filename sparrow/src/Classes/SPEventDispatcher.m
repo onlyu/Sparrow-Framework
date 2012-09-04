@@ -11,7 +11,7 @@
 
 #import "SPEventDispatcher.h"
 #import "SPDisplayObject.h"
-#import "SPEvent_Internal.h"
+#import "SDEvent_Internal.h"
 #import "SPMacros.h"
 #import "SPNSExtensions.h"
 
@@ -79,7 +79,7 @@
     return [mEventListeners objectForKey:eventType] != nil;
 }
 
-- (void)dispatchEvent:(SPEvent*)event
+- (void)dispatchEvent:(SDEvent*)event
 {
     NSMutableArray *listeners = [mEventListeners objectForKey:event.type];   
     if (!event.bubbles && !listeners) return; // no need to do anything.

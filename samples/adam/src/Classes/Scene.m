@@ -36,13 +36,19 @@
         [self addChild:umbrellaManager];
         
         
-        mHero = [Hero hero];
-        mHero.x = 200;
-        mHero.y = 200;
+        mHero = [SDHero hero];
         [self addChild:mHero];
         
+        [self reset];
     }
     return self;
+}
+
+- (void) reset
+{
+    mHero.x = 200;
+    mHero.y = 200; 
+    self.x = 0;
 }
 
 - (void) update:(float)dt

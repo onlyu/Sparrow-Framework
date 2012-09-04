@@ -46,7 +46,8 @@
 
 - (void) enter:(NSString *)startState messge:(NSString *)message
 {
-    mCurrentState = [[SDStateFactory sharedSDStateFactory] stateFromName:startState];
+    SDBaseState *newState = [[SDStateFactory sharedSDStateFactory] stateFromName:startState];
+    mCurrentState = newState;
     [mCurrentState enter:message fromState:@""];
 }
 

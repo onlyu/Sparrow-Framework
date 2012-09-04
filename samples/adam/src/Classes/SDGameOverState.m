@@ -10,6 +10,11 @@
 #import "Sunday.h"
 #import "SDGameContext.h"
 
+@interface SDGameOverState()
+- (void) onRestartClicked:(SDEvent *)event;
+- (void) onReturnToMenuClicked:(SDEvent *)event;
+@end
+
 @implementation SDGameOverState
 
 - (id) init
@@ -25,7 +30,23 @@
         textField.width = 300;
         textField.height = 200;
         [mUI addChild:textField];
-
+        
+        SPTexture *texture = [SPTexture textureWithContentsOfFile:@"button.png"];
+        SPButton *restart = [SPButton buttonWithUpState:texture];
+        restart.x = 200;
+        restart.y = 160;
+        restart.text = @"Play Again";
+        [mUI addChild:restart];
+        
+        [restart addEventListener:@selector(onRestartClicked:) atObject:self forType:SD_EVENT_CLICKED];
+        
+        SPButton *returnToMenu = [SPButton buttonWithUpState:texture];
+        returnToMenu.x = 200;
+        returnToMenu.y = 200;
+        returnToMenu.text = @"Menu";
+        [mUI addChild:returnToMenu];
+        
+        [returnToMenu addEventListener:@selector(onReturnToMenuClicked:) atObject:self forType:SD_EVENT_CLICKED];
     }
     return self;
 }
@@ -47,4 +68,15 @@
     
 }
 
+- (void) onRestartClicked:(SDEvent *)event
+{
+    SDGameContext *context = [SDGameContext sharedGameContext];
+    [context toState:@"GamePlay"];
+}
+
+- (void) onReturnToMenuClicked:(SDEvent *)event
+{
+    SDGameContext *context = [SDGameContext sharedGameContext];
+    [context toState:@"Menu"];
+}
 @end

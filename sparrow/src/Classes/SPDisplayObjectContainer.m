@@ -13,7 +13,7 @@
 #import "SPEnterFrameEvent.h"
 #import "SPDisplayObject_Internal.h"
 #import "SPMacros.h"
-#import "SPEvent_Internal.h"
+#import "SDEvent_Internal.h"
 
 // --- C functions ---------------------------------------------------------------------------------
 
@@ -68,13 +68,13 @@ static void getChildEventListeners(SPDisplayObject *object, NSString *eventType,
         [mChildren insertObject:child atIndex:MIN(mChildren.count, index)];
         child.parent = self;
         
-        SPEvent *addedEvent = [[SPEvent alloc] initWithType:SP_EVENT_TYPE_ADDED];    
+        SDEvent *addedEvent = [[SDEvent alloc] initWithType:SP_EVENT_TYPE_ADDED];    
         [child dispatchEvent:addedEvent];
         [addedEvent release];    
         
         if (self.stage)
         {
-            SPEvent *addedToStageEvent = [[SPEvent alloc] initWithType:SP_EVENT_TYPE_ADDED_TO_STAGE];
+            SDEvent *addedToStageEvent = [[SDEvent alloc] initWithType:SP_EVENT_TYPE_ADDED_TO_STAGE];
             [child broadcastEvent:addedToStageEvent];
             [addedToStageEvent release];
         }
@@ -142,13 +142,13 @@ static void getChildEventListeners(SPDisplayObject *object, NSString *eventType,
     {
         SPDisplayObject *child = [mChildren objectAtIndex:index];
 
-        SPEvent *remEvent = [[SPEvent alloc] initWithType:SP_EVENT_TYPE_REMOVED];    
+        SDEvent *remEvent = [[SDEvent alloc] initWithType:SP_EVENT_TYPE_REMOVED];    
         [child dispatchEvent:remEvent];
         [remEvent release];    
         
         if (self.stage)
         {
-            SPEvent *remFromStageEvent = [[SPEvent alloc] initWithType:SP_EVENT_TYPE_REMOVED_FROM_STAGE];
+            SDEvent *remFromStageEvent = [[SDEvent alloc] initWithType:SP_EVENT_TYPE_REMOVED_FROM_STAGE];
             [child broadcastEvent:remFromStageEvent];
             [remFromStageEvent release];
         }        
@@ -243,7 +243,7 @@ static void getChildEventListeners(SPDisplayObject *object, NSString *eventType,
     return nil;
 }
 
-- (void)broadcastEvent:(SPEvent *)event
+- (void)broadcastEvent:(SDEvent *)event
 {
     if (event.bubbles) 
         [NSException raise:SP_EXC_INVALID_OPERATION 

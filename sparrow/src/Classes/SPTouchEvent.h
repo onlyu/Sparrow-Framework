@@ -10,7 +10,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SPEvent.h"
+#import "SDEvent.h"
 #import "SPTouch.h"
 
 @class SPDisplayObject;
@@ -56,7 +56,7 @@
 
 ------------------------------------------------------------------------------------------------- */ 
  
-@interface SPTouchEvent : SPEvent
+@interface SPTouchEvent : SDEvent
 {
   @private
     NSSet *mTouches;    

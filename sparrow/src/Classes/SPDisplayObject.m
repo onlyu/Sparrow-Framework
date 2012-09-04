@@ -217,7 +217,7 @@
     return localPoint;
 }
 
-- (void)dispatchEvent:(SPEvent*)event
+- (void)dispatchEvent:(SDEvent*)event
 {   
     // on one given moment, there is only one set of touches -- thus, 
     // we process only one touch event with a certain timestamp
@@ -231,7 +231,7 @@
     [super dispatchEvent:event];
 }
 
-- (void)broadcastEvent:(SPEvent *)event
+- (void)broadcastEvent:(SDEvent *)event
 {
     [self dispatchEvent:event];
 }
@@ -324,7 +324,7 @@
         mParent = parent; // only assigned, not retained (to avoid a circular reference).
 }
 
-- (void)dispatchEventOnChildren:(SPEvent *)event
+- (void)dispatchEventOnChildren:(SDEvent *)event
 {
     [self dispatchEvent:event];
 }

@@ -45,7 +45,7 @@
     sparrowView.frameRate = 30;            // possible fps: 60, 30, 20, 15, 12, 10, etc.
     [mWindow addSubview:sparrowView];
     
-    GameController *gameController = [[GameController alloc] initWithWidth:width height:height];
+    SDGameController *gameController = [[SDGameController alloc] initWithWidth:width height:height];
     sparrowView.stage = gameController;
     
     [gameController release];

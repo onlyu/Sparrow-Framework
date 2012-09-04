@@ -7,20 +7,21 @@
 //
 
 #import "SPSprite.h"
-#import "Hero.h"
+#import "SDHero.h"
 
 @interface Scene : SPSprite 
 {
     @private
     float mWindowWidth;
     float mWindowHeight;
-    Hero *mHero;
+    SDHero *mHero;
 }
 
 - (Scene *)initWithWidth:(int)width Height:(int)height;
 
-@property (nonatomic, readonly) Hero *hero;
+@property (nonatomic, readonly) SDHero *hero;
 
 - (void) update:(float) dt;
+- (void) reset;
 
 @end

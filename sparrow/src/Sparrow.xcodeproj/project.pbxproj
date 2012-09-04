@@ -50,7 +50,7 @@
 		DE611376134F8F6C00AB742E /* SPSound.h in Headers */ = {isa = PBXBuildFile; fileRef = DEE63A4D11AED38100D60321 /* SPSound.h */; settings = {ATTRIBUTES = (); }; };
 		DE611377134F8F6C00AB742E /* SPSoundChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = DEE63A4F11AED38100D60321 /* SPSoundChannel.h */; settings = {ATTRIBUTES = (); }; };
 		DE611378134F8F6C00AB742E /* SPView.h in Headers */ = {isa = PBXBuildFile; fileRef = DEC2B6790F6D4CE90063AB1D /* SPView.h */; settings = {ATTRIBUTES = (); }; };
-		DE611379134F8F6C00AB742E /* SPEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = DEE593D10FA6116B00E3AEFC /* SPEvent.h */; settings = {ATTRIBUTES = (); }; };
+		DE611379134F8F6C00AB742E /* SDEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = DEE593D10FA6116B00E3AEFC /* SDEvent.h */; settings = {ATTRIBUTES = (); }; };
 		DE61137A134F8F6C00AB742E /* SPEventDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = DEC2B6800F6D51430063AB1D /* SPEventDispatcher.h */; settings = {ATTRIBUTES = (); }; };
 		DE61137B134F8F6C00AB742E /* SPTouch.h in Headers */ = {isa = PBXBuildFile; fileRef = DEE4449C0FABA7860085D36D /* SPTouch.h */; settings = {ATTRIBUTES = (); }; };
 		DE61137C134F8F6C00AB742E /* SPTouchEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = DEE444A80FABABBB0085D36D /* SPTouchEvent.h */; settings = {ATTRIBUTES = (); }; };
@@ -121,7 +121,7 @@
 		DEF8F2D312E1CDF40043D2F8 /* SPPoolObjectTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF8F2CE12E1CCF50043D2F8 /* SPPoolObjectTest.m */; };
 		DEFE4BCE101B31DF00E22471 /* SPTransitions.m in Sources */ = {isa = PBXBuildFile; fileRef = DED859440FB883EE00D3D7D2 /* SPTransitions.m */; };
 		DEFE4BD1101B31DF00E22471 /* SPView.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC2B67A0F6D4CE90063AB1D /* SPView.m */; };
-		DEFE4BD2101B31DF00E22471 /* SPEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE593D20FA6116B00E3AEFC /* SPEvent.m */; };
+		DEFE4BD2101B31DF00E22471 /* SDEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE593D20FA6116B00E3AEFC /* SDEvent.m */; };
 		DEFE4BD3101B31DF00E22471 /* SPEventDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC2B6810F6D51430063AB1D /* SPEventDispatcher.m */; };
 		DEFE4BD4101B31DF00E22471 /* SPTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE4449D0FABA7860085D36D /* SPTouch.m */; };
 		DEFE4BD5101B31DF00E22471 /* SPTouchEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE444A90FABABBB0085D36D /* SPTouchEvent.m */; };
@@ -244,7 +244,7 @@
 		DEDCD3AC0FADEE280022011C /* SPTouchProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTouchProcessor.h; sourceTree = "<group>"; };
 		DEDCD3AD0FADEE280022011C /* SPTouchProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTouchProcessor.m; sourceTree = "<group>"; };
 		DEDCD3CF0FADF52B0022011C /* SPTouch_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTouch_Internal.h; sourceTree = "<group>"; };
-		DEDCD44A0FADFF250022011C /* SPEvent_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPEvent_Internal.h; sourceTree = "<group>"; };
+		DEDCD44A0FADFF250022011C /* SDEvent_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDEvent_Internal.h; sourceTree = "<group>"; };
 		DEDCD44E0FADFFA40022011C /* SPDisplayObject_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPDisplayObject_Internal.h; sourceTree = "<group>"; };
 		DEE09D78108364A900ECC896 /* SPBitmapFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPBitmapFont.h; sourceTree = "<group>"; };
 		DEE09D79108364A900ECC896 /* SPBitmapFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPBitmapFont.m; sourceTree = "<group>"; };
@@ -254,8 +254,8 @@
 		DEE4449D0FABA7860085D36D /* SPTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTouch.m; sourceTree = "<group>"; };
 		DEE444A80FABABBB0085D36D /* SPTouchEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTouchEvent.h; sourceTree = "<group>"; };
 		DEE444A90FABABBB0085D36D /* SPTouchEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTouchEvent.m; sourceTree = "<group>"; };
-		DEE593D10FA6116B00E3AEFC /* SPEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPEvent.h; sourceTree = "<group>"; };
-		DEE593D20FA6116B00E3AEFC /* SPEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPEvent.m; sourceTree = "<group>"; };
+		DEE593D10FA6116B00E3AEFC /* SDEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDEvent.h; sourceTree = "<group>"; };
+		DEE593D20FA6116B00E3AEFC /* SDEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDEvent.m; sourceTree = "<group>"; };
 		DEE594490FA63BA800E3AEFC /* SPEventDispatcherTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPEventDispatcherTest.m; sourceTree = "<group>"; };
 		DEE63A4B11AED38100D60321 /* SPAudioEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAudioEngine.h; sourceTree = "<group>"; };
 		DEE63A4C11AED38100D60321 /* SPAudioEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPAudioEngine.m; sourceTree = "<group>"; };
@@ -460,7 +460,7 @@
 				DEDCD3AC0FADEE280022011C /* SPTouchProcessor.h */,
 				DEDCD3AD0FADEE280022011C /* SPTouchProcessor.m */,
 				DEDCD3CF0FADF52B0022011C /* SPTouch_Internal.h */,
-				DEDCD44A0FADFF250022011C /* SPEvent_Internal.h */,
+				DEDCD44A0FADFF250022011C /* SDEvent_Internal.h */,
 			);
 			name = Internal;
 			sourceTree = "<group>";
@@ -507,8 +507,8 @@
 			isa = PBXGroup;
 			children = (
 				DED85A930FB49E6D000BAA95 /* Internal */,
-				DEE593D10FA6116B00E3AEFC /* SPEvent.h */,
-				DEE593D20FA6116B00E3AEFC /* SPEvent.m */,
+				DEE593D10FA6116B00E3AEFC /* SDEvent.h */,
+				DEE593D20FA6116B00E3AEFC /* SDEvent.m */,
 				DEC2B6800F6D51430063AB1D /* SPEventDispatcher.h */,
 				DEC2B6810F6D51430063AB1D /* SPEventDispatcher.m */,
 				DEE4449C0FABA7860085D36D /* SPTouch.h */,
@@ -653,7 +653,7 @@
 				DE611376134F8F6C00AB742E /* SPSound.h in Headers */,
 				DE611377134F8F6C00AB742E /* SPSoundChannel.h in Headers */,
 				DE611378134F8F6C00AB742E /* SPView.h in Headers */,
-				DE611379134F8F6C00AB742E /* SPEvent.h in Headers */,
+				DE611379134F8F6C00AB742E /* SDEvent.h in Headers */,
 				DE61137A134F8F6C00AB742E /* SPEventDispatcher.h in Headers */,
 				DE61137B134F8F6C00AB742E /* SPTouch.h in Headers */,
 				DE61137C134F8F6C00AB742E /* SPTouchEvent.h in Headers */,
@@ -839,7 +839,7 @@
 				DEFE4BDF101B31DF00E22471 /* SPGLTexture.m in Sources */,
 				DEFE4BE0101B31DF00E22471 /* SPSubTexture.m in Sources */,
 				DEFE4BE1101B31DF00E22471 /* SPButton.m in Sources */,
-				DEFE4BD2101B31DF00E22471 /* SPEvent.m in Sources */,
+				DEFE4BD2101B31DF00E22471 /* SDEvent.m in Sources */,
 				DEFE4BD3101B31DF00E22471 /* SPEventDispatcher.m in Sources */,
 				DEFE4BD4101B31DF00E22471 /* SPTouch.m in Sources */,
 				DEFE4BD5101B31DF00E22471 /* SPTouchEvent.m in Sources */,

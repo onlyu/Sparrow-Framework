@@ -10,7 +10,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SPEvent.h"
+#import "SDEvent.h"
 
 /** ------------------------------------------------------------------------------------------------
 
@@ -74,7 +74,7 @@
 - (void)removeEventListenersAtObject:(id)object forType:(NSString*)eventType;
 
 /// Dispatches an event to all objects that have registered for events of the same type.
-- (void)dispatchEvent:(SPEvent*)event;
+- (void)dispatchEvent:(SDEvent*)event;
 
 /// Returns if there are listeners registered for a certain event type.
 - (BOOL)hasEventListenerForType:(NSString*)eventType;

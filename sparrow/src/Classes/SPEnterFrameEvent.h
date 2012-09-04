@@ -10,7 +10,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SPEvent.h"
+#import "SDEvent.h"
 
 #define SP_EVENT_TYPE_ENTER_FRAME @"enterFrame"
 
@@ -25,7 +25,7 @@
  
 ------------------------------------------------------------------------------------------------- */
 
-@interface SPEnterFrameEvent : SPEvent
+@interface SPEnterFrameEvent : SDEvent
 {
   @private 
     double mPassedTime;

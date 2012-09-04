@@ -4,17 +4,17 @@
 //
 
 #import <OpenGLES/ES1/gl.h>
-#import "GameController.h"
+#import "SDGameController.h"
 
 
-@interface GameController ()
+@interface SDGameController ()
 
 - (UIInterfaceOrientation)initialInterfaceOrientation;
 
 @end
 
 
-@implementation GameController
+@implementation SDGameController
 
 - (id)initWithWidth:(float)width height:(float)height
 {
@@ -112,7 +112,7 @@
         mGame.gameWidth  = newWidth;
         mGame.gameHeight = newHeight;
         
-        SPEvent *resizeEvent = [[SPResizeEvent alloc] initWithType:SP_EVENT_TYPE_RESIZE
+        SDEvent *resizeEvent = [[SPResizeEvent alloc] initWithType:SP_EVENT_TYPE_RESIZE
                                 width:newWidth height:newHeight animationTime:animationTime];
         [mGame broadcastEvent:resizeEvent];
         [resizeEvent release];

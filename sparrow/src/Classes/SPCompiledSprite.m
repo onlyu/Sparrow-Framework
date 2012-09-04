@@ -103,7 +103,7 @@
     mCurrentColors = nil;
     
     // inform all children about upcoming compilation
-    [self broadcastEvent:[SPEvent eventWithType:SP_EVENT_TYPE_COMPILE]];
+    [self broadcastEvent:[SDEvent eventWithType:SP_EVENT_TYPE_COMPILE]];
     
     void *scratchBuffer = malloc(MAX(8 * sizeof(float), 4 * sizeof(uint)));    
     

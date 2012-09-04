@@ -12,7 +12,7 @@
 #import "SPTouchEvent.h"
 #import "SPDisplayObject.h"
 #import "SPDisplayObjectContainer.h"
-#import "SPEvent_Internal.h"
+#import "SDEvent_Internal.h"
 
 @implementation SPTouchEvent
 
@@ -37,7 +37,7 @@
     return [self initWithType:type bubbles:bubbles touches:[NSSet set]];
 }
 
-- (SPEvent*)clone
+- (SDEvent*)clone
 {
     return [SPTouchEvent eventWithType:self.type touches:self.touches];
 }
