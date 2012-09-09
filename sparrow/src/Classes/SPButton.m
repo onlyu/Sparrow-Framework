@@ -59,7 +59,7 @@
         
         [mContents addChild:mBackground];
         [self addChild:mContents];
-        [self addEventListener:@selector(onTouch:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
+        [self addEventListener:@selector(onTouch:) atObject:self forType:SD_EVENT_TOUCH];
     }
     return self;
 }
@@ -291,7 +291,7 @@
 
 - (void)dealloc
 {
-    [self removeEventListenersAtObject:self forType:SP_EVENT_TYPE_TOUCH];
+    [self removeEventListenersAtObject:self forType:SD_EVENT_TOUCH];
     [mTextBounds release];
     [mUpState release];
     [mDownState release];

@@ -134,6 +134,11 @@ static SDGameContext *sGameContext = nil;
     [mFsm enter:stateName messge:@""];
 }
 
+- (void) toState:(NSString *)stateName withMessage:(NSString *)msg
+{
+    [mFsm enter:stateName messge:msg];
+}
+
 - (BOOL) isComplete
 {
     return NO;

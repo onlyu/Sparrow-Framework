@@ -12,6 +12,7 @@
 #import "SDMenuState.h"
 #import "SDGamePlayState.h"
 #import "SDGameOverState.h"
+#import "SDPauseState.h"
 
 @implementation SDStateFactory
 
@@ -24,6 +25,7 @@ SD_IMPLEMENT_SINGLETON(SDStateFactory)
         [mNamedStates setObject:[[SDMenuState alloc] init] forKey:@"Menu"];
         [mNamedStates setObject:[[SDGamePlayState alloc] init] forKey:@"GamePlay"];
         [mNamedStates setObject:[[SDGameOverState alloc] init] forKey:@"GameOver"];
+        [mNamedStates setObject:[[SDPauseState alloc] init] forKey:@"SDPauseState"];
         return self;
     }
     return nil;

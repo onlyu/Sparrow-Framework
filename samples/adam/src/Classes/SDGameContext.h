@@ -38,5 +38,6 @@
 @property (nonatomic, assign) SPSprite *scene;
 
 - (void) toState:(NSString *)stateName;
+- (void) toState:(NSString *)stateName withMessage:(NSString *)msg;
 
 @end

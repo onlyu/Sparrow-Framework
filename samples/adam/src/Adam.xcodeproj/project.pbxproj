@@ -175,6 +175,7 @@
 		25B7EADF15E6847800E53C7A /* Thumbs.db in Resources */ = {isa = PBXBuildFile; fileRef = 25B7EADC15E6847800E53C7A /* Thumbs.db */; };
 		25BB5E5F15DA9FC2008FAA0F /* UmbrellaManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BB5E5E15DA9FC2008FAA0F /* UmbrellaManager.m */; };
 		25BB5E6215DAAF57008FAA0F /* Background.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BB5E6115DAAF57008FAA0F /* Background.m */; };
+		25BD04F415FD06E80029D2E9 /* SDPauseState.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BD04F315FD06E80029D2E9 /* SDPauseState.m */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		DE1FBDFD14F831A300E86642 /* SPResizeEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1FBDFC14F831A300E86642 /* SPResizeEvent.m */; };
 		DE3F093811B7B9DC009D4DB0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3F093711B7B9DC009D4DB0 /* AVFoundation.framework */; };
@@ -412,6 +413,8 @@
 		25BB5E5E15DA9FC2008FAA0F /* UmbrellaManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UmbrellaManager.m; sourceTree = "<group>"; };
 		25BB5E6015DAAF56008FAA0F /* Background.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Background.h; sourceTree = "<group>"; };
 		25BB5E6115DAAF57008FAA0F /* Background.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Background.m; sourceTree = "<group>"; };
+		25BD04F215FD06E80029D2E9 /* SDPauseState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPauseState.h; sourceTree = "<group>"; };
+		25BD04F315FD06E80029D2E9 /* SDPauseState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPauseState.m; sourceTree = "<group>"; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* App-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "App-Prefix.pch"; sourceTree = "<group>"; };
@@ -510,6 +513,8 @@
 				2570FBD115EA75AA00B34130 /* SDGamePlayState.m */,
 				2570FBD315EA7E2C00B34130 /* SDGameOverState.h */,
 				2570FBD415EA7E2D00B34130 /* SDGameOverState.m */,
+				25BD04F215FD06E80029D2E9 /* SDPauseState.h */,
+				25BD04F315FD06E80029D2E9 /* SDPauseState.m */,
 			);
 			name = State;
 			sourceTree = "<group>";
@@ -1149,6 +1154,7 @@
 				2570FBD215EA75AA00B34130 /* SDGamePlayState.m in Sources */,
 				2570FBD515EA7E2E00B34130 /* SDGameOverState.m in Sources */,
 				25B6277515F502F100478221 /* SDPlayData.m in Sources */,
+				25BD04F415FD06E80029D2E9 /* SDPauseState.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1166,6 +1172,8 @@
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: yingying huang (TY42W9WEVF)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1181,6 +1189,8 @@
 		1D6058950D05DD3E006BFB54 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: yingying huang (TY42W9WEVF)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "App-Prefix.pch";

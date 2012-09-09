@@ -15,7 +15,7 @@
 
 @class SPDisplayObject;
 
-#define SP_EVENT_TYPE_TOUCH @"touch"
+#define SD_EVENT_TOUCH @"touch"
 
 /** ------------------------------------------------------------------------------------------------
 
@@ -31,7 +31,7 @@
  Here is an example of how to react on touch events at 'self', which could be a subclass of SPSprite:
 
 	// e.g. in 'init'
-	[self addEventListener:@selector(onTouch:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
+	[self addEventListener:@selector(onTouch:) atObject:self forType:SD_EVENT_TOUCH];
 	
 	// the corresponding listener:
 	- (void)onTouch:(SPTouchEvent*)event

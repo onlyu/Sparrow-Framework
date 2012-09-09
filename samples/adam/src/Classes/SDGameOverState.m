@@ -2,8 +2,8 @@
 //  SDGameOverState.m
 //  Adam
 //
-//  Created by 清 兰 on 12-8-26.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//  Created by JR.White on 12-8-26.
+//  Copyright (c) 2012 SundayGame. All rights reserved.
 //
 
 #import "SDGameOverState.h"

@@ -2,17 +2,19 @@
 //  UI.m
 //  Adam
 //
-//  Created by 清 兰 on 12-8-16.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//  Created by Jr.White on 12-8-16.
+//  Copyright (c) 2012 SundayGame. All rights reserved.
 //
 
 #import "SDPlayUI.h"
 #import "Scene.h"
 #import "SDPlayData.h"
+#import "SDGameContext.h"
 
 @interface SDPlayUI()
 - (void) onRightButtonClick:(SDEvent *)event;
 - (void) onLeftButtonClick:(SDEvent *)event;
+- (void) onPause:(SDEvent *)event;
 @end
 
 @implementation SDPlayUI
@@ -60,7 +62,14 @@
         
         [mRightButton addEventListener:@selector(onRightButtonClick:) atObject:self forType:SD_EVENT_CLICKED];
         [mLeftButton addEventListener:@selector(onLeftButtonClick:) atObject:self forType:SD_EVENT_CLICKED];
-
+        
+        SPTextField *pauseText = [SPTextField textFieldWithText:@"PAUSE"];
+        pauseText.x = 960/2 - 80;
+        pauseText.y = 640/2 - 30;
+        pauseText.width = 100;
+        pauseText.height = 20;
+        [self addChild:pauseText];
+        [pauseText addEventListener:@selector(onPause:) atObject:self forType:SD_EVENT_TOUCH];
     }
     return self;
 }
@@ -87,6 +96,11 @@
     playData.speed += 0.1;
 }
 
+- (void) onPause:(SDEvent *)event
+{
+    SDGameContext *context = [SDGameContext sharedGameContext];
+    [context toState:@"SDPauseState"];
+}
 
 - (void) update:(double)seconds
 {

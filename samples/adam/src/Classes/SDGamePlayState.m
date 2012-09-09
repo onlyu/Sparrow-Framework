@@ -35,8 +35,10 @@
     SDGameContext *context = [SDGameContext sharedGameContext];
     context.ui = mUI;
     context.scene = mScene;
-    [mScene reset];
-    [[SDPlayData sharedSDPlayData] reset];
+    if (message != @"resume") {
+        [mScene reset];
+        [[SDPlayData sharedSDPlayData] reset];
+    }
 }
 
 - (void) update:(float)dt
